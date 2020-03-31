@@ -32,5 +32,5 @@ security:
         ROLE_DEV: ROLE_SUPER_ADMIN
 
     access_control:
-         - { path: ^/login, roles: IS_AUTHENTICATED_FULLY }
+         - { path: ^/login, allow_if: "not is_granted('IS_AUTHENTICATED_FULLY')" }
          # - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
